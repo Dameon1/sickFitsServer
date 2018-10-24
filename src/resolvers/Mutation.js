@@ -1,3 +1,4 @@
-const mutations = {};
+'use strict';
+const Mutations = {};
 
-module.exports = mutations;
+module.exports = Mutations;
