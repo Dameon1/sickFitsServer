@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/dameon-mendoza-c3dc54/sickFits/dev
-# timestamp: Fri Oct 26 2018 17:53:46 GMT-0700 (US Mountain Standard Time)
+# timestamp: Mon Oct 29 2018 09:28:40 GMT-0700 (US Mountain Standard Time)
 
 type AggregateItem {
   count: Int!
@@ -131,7 +131,7 @@ input ItemUpdateInput {
   price: Int
 }
 
-input ItemUpdateManyInput {
+input ItemUpdateManyMutationInput {
   title: String
   description: String
   image: String
@@ -435,8 +435,8 @@ type Mutation {
   deleteItem(where: ItemWhereUniqueInput!): Item
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertItem(where: ItemWhereUniqueInput!, create: ItemCreateInput!, update: ItemUpdateInput!): Item!
-  updateManyUsers(data: UserUpdateManyInput!, where: UserWhereInput): BatchPayload!
-  updateManyItems(data: ItemUpdateManyInput!, where: ItemWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyItems(data: ItemUpdateManyMutationInput!, where: ItemWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyItems(where: ItemWhereInput): BatchPayload!
 }
@@ -616,7 +616,7 @@ input UserUpdateInput {
   permissions: UserUpdatepermissionsInput
 }
 
-input UserUpdateManyInput {
+input UserUpdateManyMutationInput {
   name: String
   email: String
   password: String
