@@ -8,6 +8,7 @@ const server = createServer();
 
 //express middlware to handle cookies (JWT)
 server.express.use(cookieParser());
+
 server.express.use((req, res, next) => {
   const { token } = req.cookies;
   if(token){
@@ -16,7 +17,18 @@ server.express.use((req, res, next) => {
   }
   next();
 });
-// TODO Use express middlware to populate current user
+
+server.express.use(async (req, res, next) => {
+  if(!req.userId) return next();
+  const user = await db.query.user({
+    where: { id: req.userId} }, '{ id, permissions, email, name }'
+    );
+    req.user = user;
+    next();
+})
+
+
+
 
 server.start(
   {
