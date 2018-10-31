@@ -181,7 +181,7 @@ const Mutations = {
     if(!userId) {
       throw new Error('You must be signed in!');
     }
-    const [existingCartItem] = awaitctx.db.query.cartItems({
+    const [existingCartItem] = await ctx.db.query.cartItems({
       where: {
         user: { id: userId},
         item: { id: args.id}
