@@ -16,7 +16,7 @@ function createServer() {
       requireResolversForResolveType: false
     },
     context: req => ({ ...req, db })
-  })
-}
+  });
+};
 
 module.exports = createServer;

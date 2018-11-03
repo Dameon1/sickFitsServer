@@ -46,6 +46,7 @@ const Mutations = {
       info
     );
   },
+
   async deleteItem(parent, args, ctx, info) {
     const where = { id: args.id };
     // 1. find the item
@@ -60,6 +61,7 @@ const Mutations = {
     // 3. Delete it!
     return ctx.db.mutation.deleteItem({ where }, info);
   },
+
   async signup(parent, args, ctx, info) {
     args.email = args.email.toLowerCase();
     const password = await bcrypt.hash(args.password, 10);
@@ -77,6 +79,7 @@ const Mutations = {
     });
     return user;
   },
+
   async signin(parent,{ email, password}, ctx, info) {
     const user = await ctx.db.query.user({where: { email }});
     if(!user){
@@ -93,10 +96,12 @@ const Mutations = {
     });
     return user;
   },
+
   signout(parent, args, ctx, info) {
     ctx.response.clearCookie('token');
     return { message: 'Goodbye!'}
   },
+
   async requestReset(parent, args, ctx, info) {
    const user = await ctx.db.query.user({ where: { email: args.email } });
    if(!user) {
@@ -121,8 +126,8 @@ const Mutations = {
   });
    //return message
    return { message: 'Thanks!'};
-
   },
+
   async resetPassword(parent, args, ctx, info){
     if(args.password !== args.confirmPassword) {
       throw new Error ('Password does not match our records');
@@ -152,6 +157,7 @@ const Mutations = {
     });
     return updatedUser;
   },
+
   async updatePermissions(parent, args, ctx, info){
     if(!ctx.request.userId){
       throw new Error('You must be logged in to perform this action')
@@ -176,6 +182,7 @@ const Mutations = {
       },
     }, info);
   },
+
   async addToCart(parent, args, ctx, info) {
     const { userId } = ctx.request;
     if(!userId) {
@@ -205,7 +212,8 @@ const Mutations = {
       },
     }, info );
   },
-  async removeFromCart(parent, args, ctx, info){
+
+  async removeFromCart(parent, args, ctx, info) {
 
     const cartItem = await ctx.db.query.cartItem({
       where: {
@@ -219,6 +227,7 @@ const Mutations = {
       where: { id: args.id },
     }, info);
   },
+  
   async createOrder(parent, args, ctx, info) {
     const { userId } = ctx.request;
     if(!userId) throw new Error('You must be signed in!');

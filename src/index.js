@@ -25,10 +25,7 @@ server.express.use(async (req, res, next) => {
     );
     req.user = user;
     next();
-})
-
-
-
+});
 
 server.start(
   {
