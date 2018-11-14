@@ -195,7 +195,6 @@ const Mutations = {
       }      
     });
     if(existingCartItem){
-      console.log('This item is already in their cart');
       return ctx.db.mutation.updateCartItem({
         where: { id: existingCartItem.id },
         data: { quantity: existingCartItem.quantity + 1 },
@@ -245,7 +244,6 @@ const Mutations = {
     );
     const amount = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.price * cartItem.quantity,0);
-    console.log(amount);
     const charge = await stripe.charges.create({
       amount,
       currency: 'USD',
