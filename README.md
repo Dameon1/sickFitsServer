@@ -18,16 +18,6 @@ This is a GraphQl Yoga server using Prisma for database.
 
 ## Screenshots
 - **TODO**
-<!-- - Mobile screenshots on the left and right
-- On the left 
-- On the right 
-- The middle picture  -->
-
-<!-- <img align="left" width="200" height="300" src="/assets/images/.png">
-<img align="right" width="200" height="300" src="/assets/images/png">
-<p align="center">
-  <img width="600" height="520" src="/assets/images/png">
-</p> -->
 
 ## Contributions
 
