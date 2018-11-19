@@ -19,14 +19,14 @@ This is a GraphQl Yoga server using Prisma for database.
 ## Screenshots
 - **TODO**
 <!-- - Mobile screenshots on the left and right
-- On the left you will find what single recipe search will provide you
-- On the right is the "search for" screen, where you can add and pick from options
-- The middle picture is an overview of what the search result will look like on a full sized screen -->
+- On the left 
+- On the right 
+- The middle picture  -->
 
-<!-- <img align="left" width="200" height="300" src="/assets/images/singleRecipe.png">
-<img align="right" width="200" height="300" src="/assets/images/homescreen.png">
+<!-- <img align="left" width="200" height="300" src="/assets/images/.png">
+<img align="right" width="200" height="300" src="/assets/images/png">
 <p align="center">
-  <img width="600" height="520" src="/assets/images/searchedRecipes.png">
+  <img width="600" height="520" src="/assets/images/png">
 </p> -->
 
 ## Contributions
@@ -38,11 +38,9 @@ change and make a pull request. I styled this app with the simplest of styles.
 
 - [GraphQl](https://graphql.org/) - API query language used.
 - [Apollo](https://www.apollographql.com/) - State management.
+- [GraphQl-Yoga](https://github.com/prisma/graphql-yoga/blob/master/README.md) - GraphQL Server.
+- [Prisma](https://www.prisma.io/) Server to database bridge.
 
-<!-- TODO
-  add Yoga
-  add Prisma
- -->
 ## Authors
 
 - **Dameon Mendoza** - *Initial work* - [dameon1](https://github.com/dameon1)
